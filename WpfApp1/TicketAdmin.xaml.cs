@@ -54,9 +54,22 @@ namespace WpfApp1
         private void Dobavit_Click(object sender, RoutedEventArgs e)
         {
 
-
-            new CheckTableAdapter().UpdateQuery(1, Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
+            try
+            {
+                if (AdminTicketDataGrid.SelectedItem as DataRowView != null)
+                {
+                    new CheckTableAdapter().UpdateQuery(1, Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
             UpdateTicketAdmin();
+                }
+                else
+                {
+                    MessageBox.Show("Выберите строку!");
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void Change_Click(object sender, RoutedEventArgs e)
