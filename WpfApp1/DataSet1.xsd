@@ -1150,31 +1150,6 @@ WHERE  (ID_Performance = @Original_ID_Performance);
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_AdminCheckTableAdapter" GeneratorDataComponentClassName="View_AdminCheckTableAdapter" Name="View_AdminCheck" UserDataComponentName="View_AdminCheckTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="TeatrConnectionString" DbObjectName="Teatr.dbo.View_AdminCheck" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Имя, Фамилия, Отчество, [Наименование организации], Дата, Адрес, [Название представления], [Количество билетов], [Финальная цена], Статус FROM dbo.View_AdminCheck</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
-              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
-              <Mapping SourceColumn="Отчество" DataSetColumn="Отчество" />
-              <Mapping SourceColumn="Наименование организации" DataSetColumn="Наименование организации" />
-              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
-              <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
-              <Mapping SourceColumn="Название представления" DataSetColumn="Название представления" />
-              <Mapping SourceColumn="Количество билетов" DataSetColumn="Количество билетов" />
-              <Mapping SourceColumn="Финальная цена" DataSetColumn="Финальная цена" />
-              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CheckTableAdapter" GeneratorDataComponentClassName="CheckTableAdapter" Name="Check" UserDataComponentName="CheckTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="TeatrConnectionString" DbObjectName="Teatr.dbo.[Check]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -1361,6 +1336,32 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
               <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
               <Mapping SourceColumn="Постановка" DataSetColumn="Постановка" />
               <Mapping SourceColumn="Дата мероприятия" DataSetColumn="Дата мероприятия" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_AdminCheckTableAdapter" GeneratorDataComponentClassName="View_AdminCheckTableAdapter" Name="View_AdminCheck" UserDataComponentName="View_AdminCheckTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TeatrConnectionString" DbObjectName="Teatr.dbo.View_AdminCheck" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Код билета], Имя, Фамилия, Отчество, [Наименование организации], Дата, Адрес, [Название представления], [Количество билетов], [Финальная цена], Статус FROM dbo.View_AdminCheck</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код билета" DataSetColumn="Код билета" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
+              <Mapping SourceColumn="Отчество" DataSetColumn="Отчество" />
+              <Mapping SourceColumn="Наименование организации" DataSetColumn="Наименование организации" />
+              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
+              <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
+              <Mapping SourceColumn="Название представления" DataSetColumn="Название представления" />
+              <Mapping SourceColumn="Количество билетов" DataSetColumn="Количество билетов" />
+              <Mapping SourceColumn="Финальная цена" DataSetColumn="Финальная цена" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1905,58 +1906,6 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="View_AdminCheck" msprop:Generator_RowClassName="View_AdminCheckRow" msprop:Generator_RowEvHandlerName="View_AdminCheckRowChangeEventHandler" msprop:Generator_RowDeletedName="View_AdminCheckRowDeleted" msprop:Generator_RowDeletingName="View_AdminCheckRowDeleting" msprop:Generator_RowEvArgName="View_AdminCheckRowChangeEvent" msprop:Generator_TablePropName="View_AdminCheck" msprop:Generator_RowChangedName="View_AdminCheckRowChanged" msprop:Generator_UserTableName="View_AdminCheck" msprop:Generator_RowChangingName="View_AdminCheckRowChanging" msprop:Generator_TableClassName="View_AdminCheckDataTable" msprop:Generator_TableVarName="tableView_AdminCheck">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Имя" msprop:Generator_UserColumnName="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Фамилия" msprop:Generator_UserColumnName="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Отчество" msprop:Generator_UserColumnName="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnVarNameInTable="columnОтчество">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Наименование_x0020_организации" msprop:Generator_UserColumnName="Наименование организации" msprop:Generator_ColumnPropNameInTable="Наименование_организацииColumn" msprop:Generator_ColumnPropNameInRow="Наименование_организации" msprop:Generator_ColumnVarNameInTable="columnНаименование_организации">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Дата" msprop:Generator_UserColumnName="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" type="xs:dateTime" />
-              <xs:element name="Адрес" msprop:Generator_UserColumnName="Адрес" msprop:Generator_ColumnPropNameInTable="АдресColumn" msprop:Generator_ColumnPropNameInRow="Адрес" msprop:Generator_ColumnVarNameInTable="columnАдрес">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Название_x0020_представления" msprop:Generator_UserColumnName="Название представления" msprop:Generator_ColumnPropNameInTable="Название_представленияColumn" msprop:Generator_ColumnPropNameInRow="Название_представления" msprop:Generator_ColumnVarNameInTable="columnНазвание_представления">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество_x0020_билетов" msprop:Generator_UserColumnName="Количество билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" type="xs:int" />
-              <xs:element name="Финальная_x0020_цена" msprop:Generator_UserColumnName="Финальная цена" msprop:Generator_ColumnPropNameInTable="Финальная_ценаColumn" msprop:Generator_ColumnPropNameInRow="Финальная_цена" msprop:Generator_ColumnVarNameInTable="columnФинальная_цена" type="xs:decimal" />
-              <xs:element name="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="Check" msprop:Generator_RowClassName="CheckRow" msprop:Generator_RowEvHandlerName="CheckRowChangeEventHandler" msprop:Generator_RowDeletedName="CheckRowDeleted" msprop:Generator_RowDeletingName="CheckRowDeleting" msprop:Generator_RowEvArgName="CheckRowChangeEvent" msprop:Generator_TablePropName="Check" msprop:Generator_RowChangedName="CheckRowChanged" msprop:Generator_UserTableName="Check" msprop:Generator_RowChangingName="CheckRowChanging" msprop:Generator_TableClassName="CheckDataTable" msprop:Generator_TableVarName="tableCheck">
           <xs:complexType>
             <xs:sequence>
@@ -2026,6 +1975,59 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Дата_x0020_мероприятия" msprop:Generator_ColumnPropNameInRow="Дата_мероприятия" msprop:Generator_ColumnPropNameInTable="Дата_мероприятияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_мероприятия" msprop:Generator_UserColumnName="Дата мероприятия" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_AdminCheck" msprop:Generator_RowEvHandlerName="View_AdminCheckRowChangeEventHandler" msprop:Generator_RowDeletedName="View_AdminCheckRowDeleted" msprop:Generator_RowDeletingName="View_AdminCheckRowDeleting" msprop:Generator_RowEvArgName="View_AdminCheckRowChangeEvent" msprop:Generator_TablePropName="View_AdminCheck" msprop:Generator_RowChangedName="View_AdminCheckRowChanged" msprop:Generator_RowChangingName="View_AdminCheckRowChanging" msprop:Generator_TableClassName="View_AdminCheckDataTable" msprop:Generator_RowClassName="View_AdminCheckRow" msprop:Generator_TableVarName="tableView_AdminCheck" msprop:Generator_UserTableName="View_AdminCheck">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_x0020_билета" msprop:Generator_ColumnPropNameInRow="Код_билета" msprop:Generator_ColumnPropNameInTable="Код_билетаColumn" msprop:Generator_ColumnVarNameInTable="columnКод_билета" msprop:Generator_UserColumnName="Код билета" type="xs:int" />
+              <xs:element name="Имя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_UserColumnName="Имя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Фамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_UserColumnName="Фамилия">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Отчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_UserColumnName="Отчество">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Наименование_x0020_организации" msprop:Generator_ColumnPropNameInRow="Наименование_организации" msprop:Generator_ColumnPropNameInTable="Наименование_организацииColumn" msprop:Generator_ColumnVarNameInTable="columnНаименование_организации" msprop:Generator_UserColumnName="Наименование организации">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
+              <xs:element name="Адрес" msprop:Generator_ColumnPropNameInRow="Адрес" msprop:Generator_ColumnPropNameInTable="АдресColumn" msprop:Generator_ColumnVarNameInTable="columnАдрес" msprop:Generator_UserColumnName="Адрес">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Название_x0020_представления" msprop:Generator_ColumnPropNameInRow="Название_представления" msprop:Generator_ColumnPropNameInTable="Название_представленияColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание_представления" msprop:Generator_UserColumnName="Название представления">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Количество_x0020_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_UserColumnName="Количество билетов" type="xs:int" />
+              <xs:element name="Финальная_x0020_цена" msprop:Generator_ColumnPropNameInRow="Финальная_цена" msprop:Generator_ColumnPropNameInTable="Финальная_ценаColumn" msprop:Generator_ColumnVarNameInTable="columnФинальная_цена" msprop:Generator_UserColumnName="Финальная цена" type="xs:decimal" />
+              <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2110,6 +2112,10 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
     <xs:unique name="Zayavka_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Zayavka" />
       <xs:field xpath="mstns:ID_Zayavka" />
+    </xs:unique>
+    <xs:unique name="View_AdminCheck_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_AdminCheck" />
+      <xs:field xpath="mstns:Код_x0020_билета" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

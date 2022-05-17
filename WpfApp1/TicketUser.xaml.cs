@@ -31,6 +31,7 @@ namespace WpfApp1
         }
 
         public decimal itog;
+        
 
        
 

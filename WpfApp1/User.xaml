@@ -8,8 +8,8 @@
         Title="User" Height="500" Width="800">
     <Grid>
         <StackPanel  Margin="50,50,-2,24">
-            <Button x:Name="Postanovki1"  Click="Postanovki_Click" Content="Постановки"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40"  Width="285" AutomationProperties.IsColumnHeader="True" FontSize="20" FontWeight="Bold">
-                <Button.RenderTransform>
+            <Button x:Name="Postanovki1"  Click="Postanovki_Click" Content="Афиша"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40"  Width="285" AutomationProperties.IsColumnHeader="True" FontSize="20" FontWeight="Bold">
+                <Button.RenderTransform> ы
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>

@@ -23,7 +23,7 @@
                     </materialDesign:Badged.RenderTransform>
                 </materialDesign:Badged>
 
-                <DataGrid x:Name="AdminTicketDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White">
+                <DataGrid x:Name="AdminTicketDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White" AutoGeneratingColumn="AdminTicketDataGrid_AutoGeneratingColumn">
                     <DataGrid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -67,16 +67,6 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                 </Button>
-                <TextBox x:Name="Status"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
-                    <TextBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="0" Y="20"/>
-                        </TransformGroup>
-                    </TextBox.RenderTransform>
-                </TextBox>
             </StackPanel>
         </Grid>
 

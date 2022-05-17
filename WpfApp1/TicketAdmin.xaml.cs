@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.DataSet1TableAdapters;
 using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace WpfApp1
 {
@@ -27,17 +28,18 @@ namespace WpfApp1
             InitializeComponent();
             UpdateTicketAdmin();
             
+            
         }
 
-
+        
         
 
         private void UpdateTicketAdmin()
         {
-            View_UserCheckTableAdapter adapter
-                = new View_UserCheckTableAdapter();
-           DataSet1.View_UserCheckDataTable table
-                = new DataSet1.View_UserCheckDataTable();
+            View_AdminCheckTableAdapter adapter
+                = new View_AdminCheckTableAdapter();
+           DataSet1.View_AdminCheckDataTable table
+                = new DataSet1.View_AdminCheckDataTable();
             adapter.Fill(table);
             AdminTicketDataGrid.ItemsSource = table;
         }
@@ -45,7 +47,7 @@ namespace WpfApp1
 
 
         
-
+        
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,11 +59,12 @@ namespace WpfApp1
 
         private void Dobavit_Click(object sender, RoutedEventArgs e)
         {
-            try
+
+                try
             {
                 if (AdminTicketDataGrid.SelectedItem as DataRowView != null)
                 {
-                    new CheckTableAdapter().UpdateQuery(Convert.ToInt32(Status.Text), Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
+                    new CheckTableAdapter().UpdateQuery(1, Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
             UpdateTicketAdmin();
                 }
                 else
@@ -77,7 +80,32 @@ namespace WpfApp1
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (AdminTicketDataGrid.SelectedItem as DataRowView != null)
+                {
+                    new CheckTableAdapter().DeleteQuery(Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
+                    UpdateTicketAdmin();
+                }
+                else
+                {
+                    MessageBox.Show("Выберите строку!");
+                }
+            }
+            catch
+            {
 
+            }
+        }
+
+        private void AdminTicketDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "Код билета")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
