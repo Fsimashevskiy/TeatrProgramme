@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfApp1.TicketAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="TicketAdmin" Height="500" Width="800">
+    <Grid>
+
+        <Grid>
+
+            <StackPanel>
+                <materialDesign:Badged Content="Билеты"  Background="#FF4500" Foreground="White" RenderTransformOrigin="12.626,-17.64" Width="376" Height="25" FontStretch="Normal">
+                    <materialDesign:Badged.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="55" Y="30"/>
+                        </TransformGroup>
+                    </materialDesign:Badged.RenderTransform>
+                </materialDesign:Badged>
+
+                <DataGrid x:Name="AdminTicketDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White">
+                    <DataGrid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-150" Y="30"/>
+                        </TransformGroup>
+                    </DataGrid.RenderTransform>
+                </DataGrid>
+
+            </StackPanel>
+
+            <StackPanel Margin="468,32,37,3">
+                <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="Button_Click" Height="45" Width="83" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-20" X="130"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Dobavit" Click="Dobavit_Click" Content="Принять"  RenderTransformOrigin="-0.659,0.361" Background="White"  Height="40" FontSize="20" FontWeight="Bold" Width="218">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-10"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Change"  Content="Отклонить"  RenderTransformOrigin="-0.659,0.361" Background="White"  Height="40" FontSize="20" Width="218" FontWeight="Bold" Click="Change_Click">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.SpisokUchastnikovUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="SpisokUchastnikovUser" Height="450" Width="800">
+    <Grid>
+        <Label Content="Список участников" HorizontalAlignment="Left" Margin="331,20,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+        <Button Name="Back" Content="Назад" Margin="638,27,35,346"  RenderTransformOrigin="-0.659,0.361" Click="Back_Click_1" Background="Gray"  />
+
+
+        <DataGrid Name="SpisokSotrudnikDataGrid" Margin="2,205,0,3"/>
+    </Grid>
+</Window>
