@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="TicketUser" Height="450" Width="800">
+        Title="TicketUser" Height="500" Width="800">
     <Grid>
         <Grid>
 

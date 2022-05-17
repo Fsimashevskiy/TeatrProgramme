@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WpfApp1.Sotrudnik"
         mc:Ignorable="d"
-        Title="Сотрудник" Height="450" Width="800">
+        Title="Сотрудник" Height="500" Width="800">
     <Grid>
         
         

@@ -53,6 +53,8 @@ namespace WpfApp1
 
         private void Dobavit_Click(object sender, RoutedEventArgs e)
         {
+
+
             new CheckTableAdapter().UpdateQuery(1, Convert.ToInt32((AdminTicketDataGrid.SelectedItem as DataRowView).Row.ItemArray[0]));
             UpdateTicketAdmin();
         }
