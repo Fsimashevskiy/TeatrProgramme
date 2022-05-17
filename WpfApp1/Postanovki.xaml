@@ -24,7 +24,7 @@
                     </materialDesign:Badged.RenderTransform>
                 </materialDesign:Badged>
 
-                <DataGrid x:Name="PerformanceDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White">
+                <DataGrid x:Name="PerformanceDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White" AutoGeneratingColumn="PerformanceDataGrid_AutoGeneratingColumn">
                     <DataGrid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -33,6 +33,17 @@
                             <TranslateTransform X="-150" Y="30"/>
                         </TransformGroup>
                     </DataGrid.RenderTransform>
+
+
+                    <DataGrid.RowHeaderStyle>
+                        <Style TargetType="DataGridRowHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate />
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowHeaderStyle>
                 </DataGrid>
 
             </StackPanel>

@@ -24,6 +24,19 @@
                 </materialDesign:Badged>
 
                 <DataGrid x:Name="AdminTicketDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White" AutoGeneratingColumn="AdminTicketDataGrid_AutoGeneratingColumn">
+
+                    <DataGrid.RowHeaderStyle>
+                        <Style TargetType="DataGridRowHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate />
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowHeaderStyle>
+
+
+
                     <DataGrid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -33,6 +46,9 @@
                         </TransformGroup>
                     </DataGrid.RenderTransform>
                 </DataGrid>
+                
+                
+                
 
             </StackPanel>
 

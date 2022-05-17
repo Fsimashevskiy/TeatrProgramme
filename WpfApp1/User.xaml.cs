@@ -45,12 +45,7 @@ namespace WpfApp1
             this.Close();
         }
 
-        private void SpisokUchastnikov_Click_1(object sender, RoutedEventArgs e)
-        {
-            SpisokUchastnikovUser spisokUchastnikovUser = new SpisokUchastnikovUser();
-            spisokUchastnikovUser.Show();
-            this.Close();
-        }
+       
 
         private void Ticket_Click(object sender, RoutedEventArgs e)
         {

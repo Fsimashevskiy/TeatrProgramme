@@ -8,10 +8,26 @@
         mc:Ignorable="d"
         Title="Жанр" Height="500" Width="800">
     <Grid>
-        
-       
-        
-        <DataGrid x:Name="GenreDataGreed" Margin="61,58,349,15" Height="361" />
+
+        <DataGrid x:Name="GenreDataGreed" Margin="61,55,349,40" AutoGeneratingColumn="GenreDataGreed_AutoGeneratingColumn">
+
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+
+
+
+        </DataGrid> 
+                  
+                  
+                  
+                 
         <Label Content="Введите жанр" HorizontalAlignment="Left" Margin="633,381,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>

@@ -4,9 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MyTickets" Height="450" Width="800">
+        Title="MyTickets" Height="500" Width="800">
     <Grid>
+
+        <DataGrid x:Name="GenreDataGreed" Margin="61,56,349,40" />
         
+        <materialDesign:Badged Content="Мои билеты"  Background="#FF4500" Foreground="White" RenderTransformOrigin="12.626,-17.64" Width="377" Height="25" FontStretch="Normal">
+            <materialDesign:Badged.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="60" Y="30"/>
+                </TransformGroup>
+            </materialDesign:Badged.RenderTransform>
+        </materialDesign:Badged>
+        <StackPanel Margin="468,32,37,19">
+            <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="back_Click"  Height="45" Width="83" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-20" X="130"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

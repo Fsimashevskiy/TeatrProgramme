@@ -8,11 +8,23 @@
         mc:Ignorable="d"
         Title="Сотрудник" Height="500" Width="800">
     <Grid>
-        
-        
-       
-        
-        <DataGrid x:Name="SotrudnikDataGrid" Margin="61,58,349,72"  MouseDoubleClick="SotrudnikDataGrid_MouseDoubleClick" IsEnabled="False" />
+
+
+
+
+        <DataGrid x:Name="SotrudnikDataGrid" Margin="61,54,349,72"  MouseDoubleClick="SotrudnikDataGrid_MouseDoubleClick" AutoGeneratingColumn="SotrudnikDataGrid_AutoGeneratingColumn" >
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            
+            
+        </DataGrid>
         
         
         
@@ -148,7 +160,7 @@
                 </ComboBox.RenderTransform>
             </ComboBox>
         </StackPanel>
-        <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="back_Click"  Margin="88,0,611,373" >
+        <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="back_Click"  Margin="88,0,611,423" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

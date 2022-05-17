@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel  Margin="50,50,-2,24">
             <Button x:Name="Postanovki1"  Click="Postanovki_Click" Content="Афиша"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40"  Width="285" AutomationProperties.IsColumnHeader="True" FontSize="20" FontWeight="Bold">
-                <Button.RenderTransform> ы
+                <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
@@ -28,31 +28,13 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button  Content="Список участников" Click="SpisokUchastnikov_Click_1"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40"  Width="285" FontSize="20" FontWeight="Bold" >
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-30"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-                <Button.LayoutTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0"/>
-                    </TransformGroup>
-                </Button.LayoutTransform>
-            </Button>
             <Button x:Name="Genre" Click="Ticket_Click"  Content="Покупка билета"  RenderTransformOrigin="-0.659,0.361" Background="White"  Height="40"  Width="285" FontSize="20" FontWeight="Bold">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="-20"/>
+                        <TranslateTransform Y="-30"/>
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
@@ -62,7 +44,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="-10"/>
+                        <TranslateTransform Y="-20"/>
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>

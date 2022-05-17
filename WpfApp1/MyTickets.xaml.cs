@@ -23,5 +23,12 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            User user = new User();
+            user.Show();
+            this.Close();
+        }
     }
 }

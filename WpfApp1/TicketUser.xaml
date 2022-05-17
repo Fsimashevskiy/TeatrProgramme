@@ -22,7 +22,18 @@
                     </materialDesign:Badged.RenderTransform>
                 </materialDesign:Badged>
 
-                <DataGrid x:Name="TicketUserDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White">
+                <DataGrid x:Name="TicketUserDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White" AutoGeneratingColumn="TicketUserDataGrid_AutoGeneratingColumn">
+                    <DataGrid.RowHeaderStyle>
+                        <Style TargetType="DataGridRowHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate />
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowHeaderStyle>
+
+
                     <DataGrid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
