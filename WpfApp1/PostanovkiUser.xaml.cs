@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,16 @@ namespace WpfApp1
             User user = new User();
             user.Show();
             this.Close();
+        }
+
+        private void PerformanceDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "Код постановки")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
