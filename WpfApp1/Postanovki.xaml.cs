@@ -44,7 +44,11 @@ namespace WpfApp1
 
         private void Date_pech_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            Data1.Text = Data_pech.SelectedDate.ToString().Split(' ')[0];
+            string t = cboTP.Text;
+            string d = Data_pech.Text;
+            DateTime dt = DateTime.Parse(d + " " + t);
+            Data1.Text = dt.ToString();
+            //Data1.Text = Data_pech.SelectedDate.ToString().Split(' ')[0];
         }
 
        
