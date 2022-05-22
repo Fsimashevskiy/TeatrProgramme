@@ -21,10 +21,12 @@ namespace WpfApp1
     /// </summary>
     public partial class PostanovkiUser : Window
     {
-        public PostanovkiUser()
+        public PostanovkiUser(string log)
         {
+            
             InitializeComponent();
             UpdatePostanovkiUser();
+            PostanovkiBox.Text += log;
         }
 
         private void UpdatePostanovkiUser()
@@ -39,7 +41,11 @@ namespace WpfApp1
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
+
+            
+            string log = PostanovkiBox.Text;
+
+            User user = new User(log);
             user.Show();
             this.Close();
         }

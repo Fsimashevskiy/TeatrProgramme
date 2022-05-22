@@ -10,6 +10,7 @@
 
 
     <Grid >
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="43*"/>
             <ColumnDefinition Width="31*"/>
@@ -29,7 +30,7 @@
         <Button x:Name="regin" Content="Регистрация" Margin="149,202,6,-152" Click="regin_Click" Background="Gray" Grid.Column="1" Grid.Row="7" />
         <Label Content="               Логин" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Height="26" Grid.Row="1"/>
         <Label Content="               Пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Grid.Row="3"/>
-        <TextBox wpf:HintAssist.HintOpacity="1" wpf:HintAssist.Hint="Логин" wpf:HintAssist.IsFloating="True" DataObject.Pasting="login_Pasting" x:Name="login" Margin="37,31,18,4" Padding="4"  BorderBrush="#1C1E21" PreviewTextInput="login_PreviewTextInput" RenderTransformOrigin="0.43,-1.834" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"
+        <TextBox   wpf:HintAssist.HintOpacity="1" wpf:HintAssist.Hint="Логин" wpf:HintAssist.IsFloating="True" DataObject.Pasting="login_Pasting" x:Name="login" Margin="37,31,18,4" Padding="4"  BorderBrush="#1C1E21" PreviewTextInput="login_PreviewTextInput" RenderTransformOrigin="0.43,-1.834" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" 
                  />
 
         <TextBox DataObject.Pasting="password_Pasting"  x:Name="password" Margin="37,27,18,0" Padding="4"  BorderBrush="#1C1E21" PreviewTextInput="password_PreviewTextInput" Grid.ColumnSpan="2" Grid.Row="3" />

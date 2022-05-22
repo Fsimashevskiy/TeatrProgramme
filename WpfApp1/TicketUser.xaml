@@ -107,6 +107,16 @@
                         </TransformGroup>
                     </ComboBox.RenderTransform>
                 </ComboBox>
+                <TextBox x:Name="TicketBox" TextWrapping="Wrap"  Width="120" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-500"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
             </StackPanel>
 
             <Label x:Name="Oplata" HorizontalAlignment="Left" Margin="510,351,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="214" Height="32">

@@ -24,14 +24,16 @@ namespace WpfApp1
     /// </summary>
     public partial class TicketUser : Window
     {
-        public TicketUser()
+        public TicketUser(string log)
         {
             InitializeComponent();
             UpdateTicketUser();
             Predstavlenie1();
+            TicketBox.Text += log;
         }
 
         public decimal itog;
+        
         
 
        
@@ -81,7 +83,7 @@ namespace WpfApp1
 
 
           
-             new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("5"), 1, 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
+             new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), 1, 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
             UpdateTicketUser();
            
         }
@@ -108,7 +110,8 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
+            string log = TicketBox.Text;
+            User user = new User(log);
             user.Show();
             this.Close();
         }

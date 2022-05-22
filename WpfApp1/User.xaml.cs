@@ -19,12 +19,13 @@ namespace WpfApp1
     /// </summary>
     public partial class User : Window
     {
-        public User()
+        public User(string log)
         {
             InitializeComponent();
+            BoxUser.Text += log;
         }
 
-       
+        
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
@@ -40,7 +41,9 @@ namespace WpfApp1
 
         private void Postanovki_Click(object sender, RoutedEventArgs e)
         {
-            PostanovkiUser postanovkiUser = new PostanovkiUser();
+            string log = BoxUser.Text;
+
+            PostanovkiUser postanovkiUser = new PostanovkiUser(log);
             postanovkiUser.Show();
             this.Close();
         }
@@ -49,14 +52,17 @@ namespace WpfApp1
 
         private void Ticket_Click(object sender, RoutedEventArgs e)
         {
-            TicketUser ticketUser = new TicketUser();
+            string log = BoxUser.Text;
+            TicketUser ticketUser = new TicketUser(log);
             ticketUser.Show();
             this.Close();
         }
 
         private void MyTickets_Click(object sender, RoutedEventArgs e)
         {
-            MyTickets myTickets = new MyTickets();
+            string log = BoxUser.Text;
+
+            MyTickets myTickets = new MyTickets(log);
             myTickets.Show();
             this.Close();
         }

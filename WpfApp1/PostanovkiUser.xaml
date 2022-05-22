@@ -60,6 +60,16 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                 </Button>
+                <TextBox x:Name="PostanovkiBox" TextWrapping="Wrap"  Width="120" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-500"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
             </StackPanel>
         </Grid>
 

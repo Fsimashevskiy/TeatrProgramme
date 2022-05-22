@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using WpfApp1.DataSet1TableAdapters;
+using System.IO;
+using System.Globalization;
 
 
 namespace WpfApp1
@@ -27,7 +29,17 @@ namespace WpfApp1
         {
             InitializeComponent();
 
+            //MyTickets MT = new MyTickets();
+
+
+            //Binding binding = new Binding();
+            //binding.ElementName = login.Text;
+            //binding.Path = new PropertyPath(MT.Box);
+
         }
+
+        //public string log;
+       
 
         UserTableAdapter user = new UserTableAdapter();
         List<string> listLog = new List<string>();
@@ -42,9 +54,25 @@ namespace WpfApp1
 
                     if (login.Text + password.Text == listLog[i])
                     {
-                        User profile = new User();
+                        string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{login.Text}";
+                        using (BinaryWriter binwr1 = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+                        {
+                          var a= new UserTableAdapter().FillBy(login.Text);
+                          binwr1.Write(a.ToString());
+
+                            
+                            
+                           
+
+
+                        }
+
+                        string log = login.Text;
+
+                        User profile = new User(log);
                         profile.Show();
                         this.Close();
+                       
                     }
                 }
                 if (password.Text != "" && login.Text != "")
@@ -61,9 +89,10 @@ namespace WpfApp1
             {
 
             }
-
+           
 
         }
+
 
         public void User()
         {
@@ -119,7 +148,6 @@ namespace WpfApp1
             return false;
         }
 
-        
-
+       
     }
 }
