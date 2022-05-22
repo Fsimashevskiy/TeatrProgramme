@@ -26,24 +26,83 @@ namespace WpfApp1
     /// </summary>
     public partial class MyTickets : Window
     {
+
+        
         public MyTickets(string log)
         {
             InitializeComponent();
-
-
             UpdateMyTicket();
-
+            MyTicketId();
             Box.Text += log;
-            
+
+
+            //string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{Box.Text}";
+            //using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
+            //{
+            //    var a = new UserTableAdapter().FillBy(Box.Text);
 
 
 
-            
-            
+            //        MessageBox.Show(a.ToString());
+            //    View_UserCheckTableAdapter adapter = new View_UserCheckTableAdapter();
+            //    DataSet1.View_UserCheckDataTable table = new DataSet1.View_UserCheckDataTable();
+            //    adapter.Fill(table);
 
 
 
-        }
+
+            //        MyTicketDataGreed.ItemsSource = table;
+
+
+
+
+
+
+
+            //}
+            string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{Box.Text}";
+            using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
+            {
+                var a = new UserTableAdapter().FillBy(Box.Text);
+
+
+
+                
+                View_UserCheckTableAdapter adapter = new View_UserCheckTableAdapter();
+                DataSet1.View_UserCheckDataTable table = new DataSet1.View_UserCheckDataTable();
+                adapter.Fill(table);
+
+                var query =
+                    from login in table
+                    where login.Логин == Box.Text
+                    select new
+                    {
+                        login.Наименование_организации,
+                        login.Название_представления,
+                        login.Адрес_зала,
+                        login.Дата,
+                        login.Количество_билетов,
+                        login.Итого,
+                        login.Статус,
+                        login.Логин
+
+
+                    };
+
+                MyTicketDataGreed.ItemsSource = query.ToList();
+
+
+
+
+
+
+
+
+
+            }
+
+
+            }
 
        
 
@@ -55,19 +114,22 @@ namespace WpfApp1
 
         private void UpdateMyTicket()
         {
-            //string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{login}";
-            //using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.OpenOrCreate)))
-            //{
-            //    int a = binwr1.ReadInt32();
 
-            //    MessageBox.Show(a.ToString());
-            //}
+
             
+
+        }
+
+        private void MyTicketId()
+        {
+            
+            
+
 
 
         }
 
-        
+
 
 
         private void back_Click(object sender, RoutedEventArgs e)
@@ -83,9 +145,50 @@ namespace WpfApp1
             
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
 
-        
+            //string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{Box.Text}";
+            //using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
+            //{
+            //    var a = new UserTableAdapter().FillBy(Box.Text);
 
 
+
+            //    MessageBox.Show(a.ToString());
+            //    View_UserCheckTableAdapter adapter = new View_UserCheckTableAdapter();
+            //    DataSet1.View_UserCheckDataTable table = new DataSet1.View_UserCheckDataTable();
+            //    adapter.Fill(table);
+
+            //    var query =
+            //        from login in table
+            //        where login.Логин == a.ToString()
+            //        select new
+            //        {
+            //            login.Наименование_организации,
+            //            login.Название_представления,
+            //            login.Адрес_зала,
+            //            login.Дата,
+            //            login.Количество_билетов,
+            //            login.Итого,
+            //            login.Статус,
+            //            login.Логин
+
+
+            //        };
+
+            //    MyTicketDataGreed.ItemsSource = query;
+
+                
+
+
+
+
+
+
+
+            }
+            
+        }
     }
-}
+

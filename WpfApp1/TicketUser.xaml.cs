@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,12 +81,21 @@ namespace WpfApp1
             //Price.Text = Predstavlenie.SelectedValue.ToString();
 
 
+            string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{TicketBox.Text}";
+            using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
+            {
+                var a = new UserTableAdapter().FillBy(TicketBox.Text);
+
+                
 
 
-          
-             new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), 1, 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
-            UpdateTicketUser();
-           
+
+
+
+
+                new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
+                UpdateTicketUser();
+            }
         }
 
         private void Pochitat_Click(object sender, RoutedEventArgs e)

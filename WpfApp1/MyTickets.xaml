@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MyTickets" Height="500" Width="800">
+        Title="MyTickets" Height="500" Width="800"
+        Loaded="Window_Loaded">
+        
     <Grid>
 
         <DataGrid x:Name="MyTicketDataGreed" Margin="61,56,349,40" />
@@ -32,7 +34,6 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <TextBox x:Name="Box" TextWrapping="Wrap"  Width="120"  />
         </StackPanel>
 
     </Grid>
