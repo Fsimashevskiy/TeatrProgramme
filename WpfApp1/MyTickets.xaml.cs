@@ -85,9 +85,11 @@ namespace WpfApp1
                         login.Итого,
                         login.Статус,
                         login.Логин
-
-
                     };
+
+                         
+
+                
 
                 MyTicketDataGreed.ItemsSource = query.ToList();
 
@@ -188,7 +190,18 @@ namespace WpfApp1
 
 
             }
-            
+
+        
+
+        private void MyTicketDataGreed_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "Логин")
+            {
+                e.Cancel = true;
+            }
         }
+    }
     }
 
