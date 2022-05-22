@@ -11,8 +11,18 @@
         
     <Grid>
 
-        <DataGrid x:Name="MyTicketDataGreed" Margin="61,56,349,40" AutoGeneratingColumn="MyTicketDataGreed_AutoGeneratingColumn"/>
-        
+        <DataGrid x:Name="MyTicketDataGreed" Margin="61,56,349,40" AutoGeneratingColumn="MyTicketDataGreed_AutoGeneratingColumn">
+
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+        </DataGrid>
         <materialDesign:Badged Content="Мои билеты"  Background="#FF4500" Foreground="White" RenderTransformOrigin="12.626,-17.64" Width="377" Height="25" FontStretch="Normal" >
             <materialDesign:Badged.RenderTransform>
                 <TransformGroup>
