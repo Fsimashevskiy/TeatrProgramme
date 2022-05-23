@@ -66,5 +66,14 @@ namespace WpfApp1
             myTickets.Show();
             this.Close();
         }
+
+        private void MyCards_Click(object sender, RoutedEventArgs e)
+        {
+            string log = BoxUser.Text;
+
+            MyCards myCards = new MyCards(log);
+            myCards.Show();
+            this.Close();
+        }
     }
 }

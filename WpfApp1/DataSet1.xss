@@ -29,7 +29,7 @@
     <Shape ID="DesignTable:Zayavka" ZOrder="6" X="815" Y="75" Height="135" Width="225" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:View_Zayavka" ZOrder="4" X="2686" Y="542" Height="273" Width="266" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:View_AdminCheck" ZOrder="3" X="1336" Y="484" Height="342" Width="298" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
-    <Shape ID="DesignTable:View_UserCheck" ZOrder="1" X="2182" Y="547" Height="273" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:View_UserCheck" ZOrder="1" X="2297" Y="631" Height="273" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Genre_Performance_Genre" ZOrder="21" LineWidth="11">

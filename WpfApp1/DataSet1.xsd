@@ -1370,19 +1370,19 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
               <DbSource ConnectionRef="TeatrConnectionString" DbObjectName="Teatr.dbo.View_UserCheck" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Наименование организации], [Название представления], [Адрес зала], Дата, [Количество билетов], Итого, Статус, Логин FROM dbo.View_UserCheck</CommandText>
+                    <CommandText>SELECT Организация, Представление, Адрес, Дата, Билеты, Цена, Статус, Логин FROM dbo.View_UserCheck</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Наименование организации" DataSetColumn="Наименование организации" />
-              <Mapping SourceColumn="Название представления" DataSetColumn="Название представления" />
-              <Mapping SourceColumn="Адрес зала" DataSetColumn="Адрес зала" />
+              <Mapping SourceColumn="Организация" DataSetColumn="Организация" />
+              <Mapping SourceColumn="Представление" DataSetColumn="Представление" />
+              <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
               <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
-              <Mapping SourceColumn="Количество билетов" DataSetColumn="Количество билетов" />
-              <Mapping SourceColumn="Итого" DataSetColumn="Итого" />
+              <Mapping SourceColumn="Билеты" DataSetColumn="Билеты" />
+              <Mapping SourceColumn="Цена" DataSetColumn="Цена" />
               <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
               <Mapping SourceColumn="Логин" DataSetColumn="Логин" />
             </Mappings>
@@ -2026,21 +2026,21 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
         <xs:element name="View_UserCheck" msprop:Generator_RowEvHandlerName="View_UserCheckRowChangeEventHandler" msprop:Generator_RowDeletedName="View_UserCheckRowDeleted" msprop:Generator_RowDeletingName="View_UserCheckRowDeleting" msprop:Generator_RowEvArgName="View_UserCheckRowChangeEvent" msprop:Generator_TablePropName="View_UserCheck" msprop:Generator_RowChangedName="View_UserCheckRowChanged" msprop:Generator_RowChangingName="View_UserCheckRowChanging" msprop:Generator_TableClassName="View_UserCheckDataTable" msprop:Generator_RowClassName="View_UserCheckRow" msprop:Generator_TableVarName="tableView_UserCheck" msprop:Generator_UserTableName="View_UserCheck">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Наименование_x0020_организации" msprop:Generator_ColumnPropNameInRow="Наименование_организации" msprop:Generator_ColumnPropNameInTable="Наименование_организацииColumn" msprop:Generator_ColumnVarNameInTable="columnНаименование_организации" msprop:Generator_UserColumnName="Наименование организации">
+              <xs:element name="Организация" msprop:Generator_ColumnPropNameInRow="Организация" msprop:Generator_ColumnPropNameInTable="ОрганизацияColumn" msprop:Generator_ColumnVarNameInTable="columnОрганизация" msprop:Generator_UserColumnName="Организация">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Название_x0020_представления" msprop:Generator_ColumnPropNameInRow="Название_представления" msprop:Generator_ColumnPropNameInTable="Название_представленияColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание_представления" msprop:Generator_UserColumnName="Название представления">
+              <xs:element name="Представление" msprop:Generator_ColumnPropNameInRow="Представление" msprop:Generator_ColumnPropNameInTable="ПредставлениеColumn" msprop:Generator_ColumnVarNameInTable="columnПредставление" msprop:Generator_UserColumnName="Представление">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Адрес_x0020_зала" msprop:Generator_ColumnPropNameInRow="Адрес_зала" msprop:Generator_ColumnPropNameInTable="Адрес_залаColumn" msprop:Generator_ColumnVarNameInTable="columnАдрес_зала" msprop:Generator_UserColumnName="Адрес зала">
+              <xs:element name="Адрес" msprop:Generator_ColumnPropNameInRow="Адрес" msprop:Generator_ColumnPropNameInTable="АдресColumn" msprop:Generator_ColumnVarNameInTable="columnАдрес" msprop:Generator_UserColumnName="Адрес">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -2048,8 +2048,8 @@ SELECT ID_Zayavka, Check_ID FROM Zayavka WHERE (ID_Zayavka = @ID_Zayavka)</Comma
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
-              <xs:element name="Количество_x0020_билетов" msprop:Generator_ColumnPropNameInRow="Количество_билетов" msprop:Generator_ColumnPropNameInTable="Количество_билетовColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество_билетов" msprop:Generator_UserColumnName="Количество билетов" type="xs:int" />
-              <xs:element name="Итого" msprop:Generator_ColumnPropNameInRow="Итого" msprop:Generator_ColumnPropNameInTable="ИтогоColumn" msprop:Generator_ColumnVarNameInTable="columnИтого" msprop:Generator_UserColumnName="Итого" type="xs:decimal" />
+              <xs:element name="Билеты" msprop:Generator_ColumnPropNameInRow="Билеты" msprop:Generator_ColumnPropNameInTable="БилетыColumn" msprop:Generator_ColumnVarNameInTable="columnБилеты" msprop:Generator_UserColumnName="Билеты" type="xs:int" />
+              <xs:element name="Цена" msprop:Generator_ColumnPropNameInRow="Цена" msprop:Generator_ColumnPropNameInTable="ЦенаColumn" msprop:Generator_ColumnVarNameInTable="columnЦена" msprop:Generator_UserColumnName="Цена" type="xs:decimal" />
               <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус" type="xs:int" />
               <xs:element name="Логин" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_ColumnVarNameInTable="columnЛогин" msprop:Generator_UserColumnName="Логин">
                 <xs:simpleType>

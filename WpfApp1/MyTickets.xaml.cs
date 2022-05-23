@@ -65,7 +65,7 @@ namespace WpfApp1
             {
                 var a = new UserTableAdapter().FillBy(Box.Text);
 
-
+                
 
                 
                 View_UserCheckTableAdapter adapter = new View_UserCheckTableAdapter();
@@ -77,16 +77,17 @@ namespace WpfApp1
                     where login.Логин == Box.Text
                     select new
                     {
-                        login.Наименование_организации,
-                        login.Название_представления,
-                        login.Адрес_зала,
+                        login.Организация,
+                        login.Представление,
+                        login.Адрес,
                         login.Дата,
-                        login.Количество_билетов,
-                        login.Итого,
+                        login.Билеты,
+                        login.Цена,
                         login.Статус,
                         login.Логин
+                       
                     };
-
+                
                          
 
                 
@@ -94,8 +95,7 @@ namespace WpfApp1
                 MyTicketDataGreed.ItemsSource = query.ToList();
 
 
-
-
+               
 
 
 
@@ -104,7 +104,7 @@ namespace WpfApp1
             }
 
 
-            }
+        }
 
        
 

@@ -8660,17 +8660,17 @@ namespace WpfApp1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class View_UserCheckDataTable : global::System.Data.TypedTableBase<View_UserCheckRow> {
             
-            private global::System.Data.DataColumn columnНаименование_организации;
+            private global::System.Data.DataColumn columnОрганизация;
             
-            private global::System.Data.DataColumn columnНазвание_представления;
+            private global::System.Data.DataColumn columnПредставление;
             
-            private global::System.Data.DataColumn columnАдрес_зала;
+            private global::System.Data.DataColumn columnАдрес;
             
             private global::System.Data.DataColumn columnДата;
             
-            private global::System.Data.DataColumn columnКоличество_билетов;
+            private global::System.Data.DataColumn columnБилеты;
             
-            private global::System.Data.DataColumn columnИтого;
+            private global::System.Data.DataColumn columnЦена;
             
             private global::System.Data.DataColumn columnСтатус;
             
@@ -8711,25 +8711,25 @@ namespace WpfApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Наименование_организацииColumn {
+            public global::System.Data.DataColumn ОрганизацияColumn {
                 get {
-                    return this.columnНаименование_организации;
+                    return this.columnОрганизация;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Название_представленияColumn {
+            public global::System.Data.DataColumn ПредставлениеColumn {
                 get {
-                    return this.columnНазвание_представления;
+                    return this.columnПредставление;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Адрес_залаColumn {
+            public global::System.Data.DataColumn АдресColumn {
                 get {
-                    return this.columnАдрес_зала;
+                    return this.columnАдрес;
                 }
             }
             
@@ -8743,17 +8743,17 @@ namespace WpfApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Количество_билетовColumn {
+            public global::System.Data.DataColumn БилетыColumn {
                 get {
-                    return this.columnКоличество_билетов;
+                    return this.columnБилеты;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ИтогоColumn {
+            public global::System.Data.DataColumn ЦенаColumn {
                 get {
-                    return this.columnИтого;
+                    return this.columnЦена;
                 }
             }
             
@@ -8810,15 +8810,15 @@ namespace WpfApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public View_UserCheckRow AddView_UserCheckRow(string Наименование_организации, string Название_представления, string Адрес_зала, System.DateTime Дата, int Количество_билетов, decimal Итого, int Статус, string Логин) {
+            public View_UserCheckRow AddView_UserCheckRow(string Организация, string Представление, string Адрес, System.DateTime Дата, int Билеты, decimal Цена, int Статус, string Логин) {
                 View_UserCheckRow rowView_UserCheckRow = ((View_UserCheckRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Наименование_организации,
-                        Название_представления,
-                        Адрес_зала,
+                        Организация,
+                        Представление,
+                        Адрес,
                         Дата,
-                        Количество_билетов,
-                        Итого,
+                        Билеты,
+                        Цена,
                         Статус,
                         Логин};
                 rowView_UserCheckRow.ItemArray = columnValuesArray;
@@ -8843,12 +8843,12 @@ namespace WpfApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnНаименование_организации = base.Columns["Наименование организации"];
-                this.columnНазвание_представления = base.Columns["Название представления"];
-                this.columnАдрес_зала = base.Columns["Адрес зала"];
+                this.columnОрганизация = base.Columns["Организация"];
+                this.columnПредставление = base.Columns["Представление"];
+                this.columnАдрес = base.Columns["Адрес"];
                 this.columnДата = base.Columns["Дата"];
-                this.columnКоличество_билетов = base.Columns["Количество билетов"];
-                this.columnИтого = base.Columns["Итого"];
+                this.columnБилеты = base.Columns["Билеты"];
+                this.columnЦена = base.Columns["Цена"];
                 this.columnСтатус = base.Columns["Статус"];
                 this.columnЛогин = base.Columns["Логин"];
             }
@@ -8856,31 +8856,31 @@ namespace WpfApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnНаименование_организации = new global::System.Data.DataColumn("Наименование организации", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНаименование_организации);
-                this.columnНазвание_представления = new global::System.Data.DataColumn("Название представления", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНазвание_представления);
-                this.columnАдрес_зала = new global::System.Data.DataColumn("Адрес зала", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnАдрес_зала);
+                this.columnОрганизация = new global::System.Data.DataColumn("Организация", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОрганизация);
+                this.columnПредставление = new global::System.Data.DataColumn("Представление", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПредставление);
+                this.columnАдрес = new global::System.Data.DataColumn("Адрес", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnАдрес);
                 this.columnДата = new global::System.Data.DataColumn("Дата", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnДата);
-                this.columnКоличество_билетов = new global::System.Data.DataColumn("Количество билетов", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКоличество_билетов);
-                this.columnИтого = new global::System.Data.DataColumn("Итого", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnИтого);
+                this.columnБилеты = new global::System.Data.DataColumn("Билеты", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnБилеты);
+                this.columnЦена = new global::System.Data.DataColumn("Цена", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЦена);
                 this.columnСтатус = new global::System.Data.DataColumn("Статус", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСтатус);
                 this.columnЛогин = new global::System.Data.DataColumn("Логин", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnЛогин);
-                this.columnНаименование_организации.AllowDBNull = false;
-                this.columnНаименование_организации.MaxLength = 50;
-                this.columnНазвание_представления.AllowDBNull = false;
-                this.columnНазвание_представления.MaxLength = 30;
-                this.columnАдрес_зала.AllowDBNull = false;
-                this.columnАдрес_зала.MaxLength = 50;
+                this.columnОрганизация.AllowDBNull = false;
+                this.columnОрганизация.MaxLength = 50;
+                this.columnПредставление.AllowDBNull = false;
+                this.columnПредставление.MaxLength = 30;
+                this.columnАдрес.AllowDBNull = false;
+                this.columnАдрес.MaxLength = 50;
                 this.columnДата.AllowDBNull = false;
-                this.columnКоличество_билетов.AllowDBNull = false;
-                this.columnИтого.AllowDBNull = false;
+                this.columnБилеты.AllowDBNull = false;
+                this.columnЦена.AllowDBNull = false;
                 this.columnСтатус.AllowDBNull = false;
                 this.columnЛогин.AllowDBNull = false;
                 this.columnЛогин.MaxLength = 30;
@@ -10922,34 +10922,34 @@ namespace WpfApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Наименование_организации {
+            public string Организация {
                 get {
-                    return ((string)(this[this.tableView_UserCheck.Наименование_организацииColumn]));
+                    return ((string)(this[this.tableView_UserCheck.ОрганизацияColumn]));
                 }
                 set {
-                    this[this.tableView_UserCheck.Наименование_организацииColumn] = value;
+                    this[this.tableView_UserCheck.ОрганизацияColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Название_представления {
+            public string Представление {
                 get {
-                    return ((string)(this[this.tableView_UserCheck.Название_представленияColumn]));
+                    return ((string)(this[this.tableView_UserCheck.ПредставлениеColumn]));
                 }
                 set {
-                    this[this.tableView_UserCheck.Название_представленияColumn] = value;
+                    this[this.tableView_UserCheck.ПредставлениеColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Адрес_зала {
+            public string Адрес {
                 get {
-                    return ((string)(this[this.tableView_UserCheck.Адрес_залаColumn]));
+                    return ((string)(this[this.tableView_UserCheck.АдресColumn]));
                 }
                 set {
-                    this[this.tableView_UserCheck.Адрес_залаColumn] = value;
+                    this[this.tableView_UserCheck.АдресColumn] = value;
                 }
             }
             
@@ -10966,23 +10966,23 @@ namespace WpfApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Количество_билетов {
+            public int Билеты {
                 get {
-                    return ((int)(this[this.tableView_UserCheck.Количество_билетовColumn]));
+                    return ((int)(this[this.tableView_UserCheck.БилетыColumn]));
                 }
                 set {
-                    this[this.tableView_UserCheck.Количество_билетовColumn] = value;
+                    this[this.tableView_UserCheck.БилетыColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Итого {
+            public decimal Цена {
                 get {
-                    return ((decimal)(this[this.tableView_UserCheck.ИтогоColumn]));
+                    return ((decimal)(this[this.tableView_UserCheck.ЦенаColumn]));
                 }
                 set {
-                    this[this.tableView_UserCheck.ИтогоColumn] = value;
+                    this[this.tableView_UserCheck.ЦенаColumn] = value;
                 }
             }
             
@@ -19248,12 +19248,12 @@ SELECT ID_ticket, kolichestvo_biletov, Naimenovanie_organizacii, Status, User_ID
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "View_UserCheck";
-            tableMapping.ColumnMappings.Add("Наименование организации", "Наименование организации");
-            tableMapping.ColumnMappings.Add("Название представления", "Название представления");
-            tableMapping.ColumnMappings.Add("Адрес зала", "Адрес зала");
+            tableMapping.ColumnMappings.Add("Организация", "Организация");
+            tableMapping.ColumnMappings.Add("Представление", "Представление");
+            tableMapping.ColumnMappings.Add("Адрес", "Адрес");
             tableMapping.ColumnMappings.Add("Дата", "Дата");
-            tableMapping.ColumnMappings.Add("Количество билетов", "Количество билетов");
-            tableMapping.ColumnMappings.Add("Итого", "Итого");
+            tableMapping.ColumnMappings.Add("Билеты", "Билеты");
+            tableMapping.ColumnMappings.Add("Цена", "Цена");
             tableMapping.ColumnMappings.Add("Статус", "Статус");
             tableMapping.ColumnMappings.Add("Логин", "Логин");
             this._adapter.TableMappings.Add(tableMapping);
@@ -19273,8 +19273,8 @@ SELECT ID_ticket, kolichestvo_biletov, Naimenovanie_organizacii, Status, User_ID
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Наименование организации], [Название представления], [Адрес зала], Дата, " +
-                "[Количество билетов], Итого, Статус, Логин FROM dbo.View_UserCheck";
+            this._commandCollection[0].CommandText = "SELECT Организация, Представление, Адрес, Дата, Билеты, Цена, Статус, Логин FROM " +
+                "dbo.View_UserCheck";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

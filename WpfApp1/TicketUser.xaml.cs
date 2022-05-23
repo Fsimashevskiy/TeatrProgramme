@@ -31,6 +31,27 @@ namespace WpfApp1
             UpdateTicketUser();
             Predstavlenie1();
             TicketBox.Text += log;
+
+            string pu = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{TicketBox.Text}";
+            int i = 0;
+            if (Directory.Exists(pu) == false)
+            {
+                MessageBox.Show("Здесь вы можете добавлять карты и пополнять их");
+            }
+            else
+            {
+                while (i < Directory.GetFiles(pu).Count())
+                {
+                    string filename = Directory.GetFiles(pu)[i];
+                    var replacement = filename.Replace($@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{TicketBox.Text}\", "");
+                    if (CardBox.Items.Contains(replacement) == false)
+                    {
+                        CardBox.Items.Add(replacement);
+                    }
+                    i++;
+                }
+            }
+
         }
 
         public decimal itog;
@@ -86,16 +107,57 @@ namespace WpfApp1
             {
                 var a = new UserTableAdapter().FillBy(TicketBox.Text);
 
-                
 
 
 
 
+                string pu = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{TicketBox.Text}\{CardBox.SelectedItem.ToString()}";
 
+                string nomer = "";
+                string srok = "";
+                string cvv = "";
+                string balance = "";
 
-                new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
-                UpdateTicketUser();
+                using (BinaryReader reader = new BinaryReader(File.Open(pu, FileMode.Open)))
+                {
+                    var count = reader.BaseStream.Length / sizeof(int);
+                    for (var i = 0; i < count; i++)
+                    {
+                        nomer = reader.ReadString();
+                        srok = reader.ReadString();
+                        cvv = reader.ReadString();
+                        balance = reader.ReadString();
+                        reader.Close();
+                        break;
+                    }
+                }
+                if (Convert.ToDecimal(balance)> Convert.ToDecimal(Oplata.Content))
+                {
+
+                    new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
+                    UpdateTicketUser();
+
+                    using (BinaryWriter writer = new BinaryWriter(File.Open(pu, FileMode.Open)))
+                    {
+                        var countt = writer.BaseStream.Length / sizeof(int);
+                        for (var j = 0; j < countt; j++)
+                        {
+                            writer.Write(nomer);
+                            writer.Write(srok);
+                            writer.Write(cvv);
+                            writer.Write((Convert.ToDecimal(balance) -Convert.ToDecimal(Oplata.Content)).ToString());
+                            break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Купи деньги");
+                }
             }
+
+            
         }
 
         private void Pochitat_Click(object sender, RoutedEventArgs e)

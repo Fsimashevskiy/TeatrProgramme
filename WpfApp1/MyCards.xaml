@@ -1,0 +1,219 @@
+﻿<Window x:Class="WpfApp1.MyCards"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MyCards" Height="500" Width="800">
+    <Grid>
+        <TextBox x:Name="loginMyCardsBox"  TextWrapping="Wrap" Background="White" FontSize="20" RenderTransformOrigin="0.5,0.5" Margin="40,296,517,59" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0" Y="-1000"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+
+        <Grid>
+
+            <StackPanel/>
+
+            <StackPanel Margin="2,27,0,3">
+                <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="Button_Click"  Height="45" Width="83" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0" X="350"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Label x:Name="Balans" Content="Баланс: " FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="153" Height="46">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-50" X="-300"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Button x:Name="Oformit_Card" Click="Pochitat_Click"  Content="Оформить"  RenderTransformOrigin="-0.659,0.361" Background="White"  Height="40" FontSize="20" FontWeight="Bold" Width="218">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-10" X="280"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Popolnit" Click="Popolnit_Click"  Content="Пополнить баланс"  RenderTransformOrigin="-0.659,0.361" Background="White"  Height="40" FontSize="20" Width="218" FontWeight="Bold">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0" X="280"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <TextBox x:Name="Srok_Text"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0" Y="12"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <ComboBox x:Name="CardBox" RenderTransformOrigin="0.5,0.5" Height="59"  Width="209" Background="White" >
+
+
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="280" Y="100"/>
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                   
+
+
+                </ComboBox>
+                <Label Content="Срок" FontSize="14" RenderTransformOrigin="0.564,-0.208" FontWeight="Bold" Width="130">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-50" X="40"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Button x:Name="Delete"  Content="Удалить"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40" FontSize="20" Width="218" FontWeight="Bold" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="280" Y="-50"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <TextBox x:Name="Naimenovanie_bank_Text"  TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0" Y="-320"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <Label  x:Name="dfsf" Content="" FontSize="14" RenderTransformOrigin="0.564,-0.208" FontWeight="Bold" Width="130">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-160" X="300"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="Price" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0" Y="95"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <Label Content="Цена за билет" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="123">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="90" X="10"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="Nomer_Card_Text"  TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0" Y="-360"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <TextBox x:Name="CVV_Text"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0" Y="-230"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <Label Content="CVV" FontSize="14" RenderTransformOrigin="0.564,-0.208" FontWeight="Bold" Width="130">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-230" X="40"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="PopolnitText"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="280" Y="-400"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+            </StackPanel>
+
+            <Label Content="Выбор банка" HorizontalAlignment="Left" Margin="328,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.466,-1.964">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-20" X="30"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Номер карты" HorizontalAlignment="Left" Margin="374,178,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.564,-0.208" FontWeight="Bold">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0" X="-25"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+
+
+        </Grid>
+    </Grid>
+</Window>
