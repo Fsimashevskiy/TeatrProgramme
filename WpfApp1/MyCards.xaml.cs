@@ -31,53 +31,81 @@ namespace WpfApp1
     
         private void Pochitat_Click(object sender, RoutedEventArgs e)
         {
-            string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}";
-            if (Directory.Exists(path) == true)
-            {
-               
-                if(File.Exists(path + @"\" + Naimenovanie_bank_Text.Text)==false)
-                {
-                    using (BinaryWriter binwr1 = new BinaryWriter(File.Create(path + @"\" + Naimenovanie_bank_Text.Text)))
-                    {
-                        string nomerkarty = Nomer_Card_Text.Text;
-                        string srok = Srok_Text.Text;
-                        string cvv = CVV_Text.Text;
 
-                        binwr1.Write(nomerkarty);
-                        binwr1.Write(srok);
-                        binwr1.Write(cvv);
-                        binwr1.Write("0");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Вы уже добавляли такую карту");
-                }
+            if (Nomer_Card_Text.Text.Length < 16)
+            {
+
+                MessageBox.Show("Введите полный номер вашей карточки!");
+                Nomer_Card_Text.Clear();
+                Nomer_Card_Text.Focus();
             }
+
+            if (Srok_Text.Text.Length < 5)
+            {
+                MessageBox.Show("Введите корректный срок действия карточки!");
+                Nomer_Card_Text.Clear();
+                Nomer_Card_Text.Focus();
+            }
+
+            if(CVV_Text.Text.Length < 3)
+            {
+                MessageBox.Show("Введите корректный CVV!");
+                Nomer_Card_Text.Clear();
+                Nomer_Card_Text.Focus();
+            }
+
             else
             {
-                Directory.CreateDirectory(path);
-                if (File.Exists(path + @"\" + Naimenovanie_bank_Text.Text) == false)
+                string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}";
+                if (Directory.Exists(path) == true)
                 {
-                    using (BinaryWriter binwr1 = new BinaryWriter(File.Create(path + @"\" + Naimenovanie_bank_Text.Text)))
-                    {
-                        string nomerkarty = Nomer_Card_Text.Text;
-                        string srok = Srok_Text.Text;
-                        string cvv = CVV_Text.Text;
 
-                        binwr1.Write(nomerkarty);
-                        binwr1.Write(srok);                       
-                        binwr1.Write(cvv);
-                        binwr1.Write("0");
-                        
+                    if (File.Exists(path + @"\" + Naimenovanie_bank_Text.Text) == false)
+                    {
+                        using (BinaryWriter binwr1 = new BinaryWriter(File.Create(path + @"\" + Naimenovanie_bank_Text.Text)))
+                        {
+                            string nomerkarty = Nomer_Card_Text.Text;
+                            string srok = Srok_Text.Text;
+                            string cvv = CVV_Text.Text;
+
+                            binwr1.Write(nomerkarty);
+                            binwr1.Write(srok);
+                            binwr1.Write(cvv);
+                            binwr1.Write("0");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Вы уже добавляли такую карту");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Вы уже добавляли такую карту");
+                    Directory.CreateDirectory(path);
+                    if (File.Exists(path + @"\" + Naimenovanie_bank_Text.Text) == false)
+                    {
+                        using (BinaryWriter binwr1 = new BinaryWriter(File.Create(path + @"\" + Naimenovanie_bank_Text.Text)))
+                        {
+                            string nomerkarty = Nomer_Card_Text.Text;
+                            string srok = Srok_Text.Text;
+                            string cvv = CVV_Text.Text;
+
+                            binwr1.Write(nomerkarty);
+                            binwr1.Write(srok);
+                            binwr1.Write(cvv);
+                            binwr1.Write("0");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Вы уже добавляли такую карту");
+                    }
                 }
+                UpdateBox();
+
+
             }
-            UpdateBox();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -163,17 +191,72 @@ namespace WpfApp1
 
         }
 
+        private void Naimenovanie_bank_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'а' && ch <= 'я' || ch >= 'А' && ch <= 'Я' || ch == ' ' || ch >= 'a' && ch <= 'z' ||
+                    ch >= 'A' && ch <= 'Z').ToArray());
+            }
+        }
 
-            
+        private void Nomer_Card_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9').ToArray());
 
 
+                
 
-            //int z = Convert.ToInt32(Vvod.Text);
-            //int x = Convert.ToInt32(BS.Content);
-            //int y = z + x;
+            }
 
 
         }
+
+        private void Srok_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9' || ch == '/').ToArray());
+
+
+
+
+            }
+        }
+
+        private void CVV_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9').ToArray());
+
+
+
+
+            }
+        }
+
+
+
+
+
+
+        //int z = Convert.ToInt32(Vvod.Text);
+        //int x = Convert.ToInt32(BS.Content);
+        //int y = z + x;
+
+
+    }
 
        
     }

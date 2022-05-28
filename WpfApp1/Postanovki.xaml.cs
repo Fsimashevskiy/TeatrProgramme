@@ -27,6 +27,8 @@ namespace WpfApp1
             InitializeComponent();
             UpdatePostanovki();
             Data1.IsEnabled = false;
+
+           
         }
 
         private void UpdatePostanovki()
@@ -134,6 +136,26 @@ namespace WpfApp1
             if (propertyDescriptor.DisplayName == "Код постановки")
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void Price_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(  ch => ch>= '0' && ch <= '9' || ch == ',').ToArray());
+            }
+        }
+
+        private void Performance1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'а' && ch <= 'я' || ch >= 'А' && ch <= 'Я' || ch == ' ').ToArray());
             }
         }
     }

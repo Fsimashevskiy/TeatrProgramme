@@ -138,5 +138,15 @@ namespace WpfApp1
                 e.Cancel = true;
             }
         }
+
+        private void Character_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'а' && ch <= 'я' || ch >= 'А' && ch <= 'Я' || ch == ' ').ToArray());
+            }
+        }
     }
 }

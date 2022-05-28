@@ -121,5 +121,29 @@ namespace WpfApp1
                 e.Cancel = true;
             }
         }
+
+        private void dolj2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+
+            if (sender is TextBox textBox)
+            {
+                
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9').ToArray());
+                
+            }
+        }
+
+        private void dolj1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'а' && ch <= 'я' || ch >= 'А' && ch <= 'Я' || ch == ' ').ToArray());
+            }
+        }
     }
 }

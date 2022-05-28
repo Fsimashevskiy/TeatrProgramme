@@ -90,7 +90,7 @@
             </Button>
 
            
-            <TextBox x:Name="Character" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+            <TextBox x:Name="Character" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Character_TextChanged" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

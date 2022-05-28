@@ -76,7 +76,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <TextBox x:Name="dolj1" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+            <TextBox x:Name="dolj1" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="dolj1_TextChanged" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -106,7 +106,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <TextBox x:Name="dolj2" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+            <TextBox x:Name="dolj2" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="dolj2_TextChanged"  MaxLength="6" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

@@ -38,6 +38,17 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+
+        <Label Content="Тембр голоса" HorizontalAlignment="Left" Margin="541,188,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.327,0.105">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="114" X="90"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="571,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,1.342" FontSize="14">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -48,6 +59,16 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <Label Content="Пол" HorizontalAlignment="Left" Margin="571,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,1.342" FontSize="14">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="85" Y="95"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="555,240,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.297,0.446">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -55,6 +76,16 @@
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform Y="123" X="-25"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Должность" HorizontalAlignment="Left" Margin="555,240,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.297,0.446">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="123" X="85"/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
@@ -99,7 +130,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <TextBox x:Name="Name" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+            <TextBox x:Name="Name" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Name_TextChanged">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -109,7 +140,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox x:Name="Surname" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <TextBox x:Name="Surname" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Surname_TextChanged">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -119,7 +150,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox x:Name="Otchestvo" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <TextBox x:Name="Otchestvo" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="110" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Otchestvo_TextChanged">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

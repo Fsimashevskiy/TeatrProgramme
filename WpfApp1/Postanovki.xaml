@@ -99,7 +99,7 @@
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
-                <TextBox x:Name="Performance1" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                <TextBox x:Name="Performance1" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Performance1_TextChanged" >
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -138,7 +138,7 @@
                         </TransformGroup>
                     </ComboBox.RenderTransform>
                 </ComboBox>
-                <TextBox x:Name="Price" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                <TextBox x:Name="Price"  Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="223" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Price_TextChanged" MaxLength="5" >
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
