@@ -93,91 +93,112 @@ namespace WpfApp1
         private void Kupit_Click(object sender, RoutedEventArgs e)
         {
 
-            //DataRowView drv = TicketUserDataGrid.Items[12] as DataRowView;
-            //Int32 str1 = Convert.ToInt32(KolichestvoBiletov.Text);
-            //Int32 str2 = Convert.ToInt32(drv[6]);
-            //int str3 = str1 * str2;
-            //MessageBox.Show(str3.ToString());
-
-            //Price.Text = Predstavlenie.SelectedValue.ToString();
-
-
-            string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{TicketBox.Text}";
-            using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
+            if (Oplata.Content != null)
             {
-                var a = new UserTableAdapter().FillBy(TicketBox.Text);
+                //DataRowView drv = TicketUserDataGrid.Items[12] as DataRowView;
+                //Int32 str1 = Convert.ToInt32(KolichestvoBiletov.Text);
+                //Int32 str2 = Convert.ToInt32(drv[6]);
+                //int str3 = str1 * str2;
+                //MessageBox.Show(str3.ToString());
 
+                //Price.Text = Predstavlenie.SelectedValue.ToString();
 
-
-
-
-                string pu = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{TicketBox.Text}\{CardBox.SelectedItem.ToString()}";
-
-                string nomer = "";
-                string srok = "";
-                string cvv = "";
-                string balance = "";
-
-                using (BinaryReader reader = new BinaryReader(File.Open(pu, FileMode.Open)))
+                try
                 {
-                    var count = reader.BaseStream.Length / sizeof(int);
-                    for (var i = 0; i < count; i++)
+                    string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\loginbin/{TicketBox.Text}";
+                    using (BinaryReader binwr1 = new BinaryReader(File.Open(path, FileMode.Open)))
                     {
-                        nomer = reader.ReadString();
-                        srok = reader.ReadString();
-                        cvv = reader.ReadString();
-                        balance = reader.ReadString();
-                        reader.Close();
-                        break;
-                    }
-                }
-                if (Convert.ToDecimal(balance)> Convert.ToDecimal(Oplata.Content))
-                {
+                        var a = new UserTableAdapter().FillBy(TicketBox.Text);
 
-                    new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
-                    UpdateTicketUser();
 
-                    using (BinaryWriter writer = new BinaryWriter(File.Open(pu, FileMode.Open)))
-                    {
-                        var countt = writer.BaseStream.Length / sizeof(int);
-                        for (var j = 0; j < countt; j++)
+
+
+
+                        string pu = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{TicketBox.Text}\{CardBox.SelectedItem.ToString()}";
+
+                        string nomer = "";
+                        string srok = "";
+                        string cvv = "";
+                        string balance = "";
+
+                        using (BinaryReader reader = new BinaryReader(File.Open(pu, FileMode.Open)))
                         {
-                            writer.Write(nomer);
-                            writer.Write(srok);
-                            writer.Write(cvv);
-                            writer.Write((Convert.ToDecimal(balance) -Convert.ToDecimal(Oplata.Content)).ToString());
-                            break;
+                            var count = reader.BaseStream.Length / sizeof(int);
+                            for (var i = 0; i < count; i++)
+                            {
+                                nomer = reader.ReadString();
+                                srok = reader.ReadString();
+                                cvv = reader.ReadString();
+                                balance = reader.ReadString();
+                                reader.Close();
+                                break;
+                            }
+                        }
+                        if (Convert.ToDecimal(balance) > Convert.ToDecimal(Oplata.Content))
+                        {
+
+                            new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
+                            UpdateTicketUser();
+
+                            using (BinaryWriter writer = new BinaryWriter(File.Open(pu, FileMode.Open)))
+                            {
+                                var countt = writer.BaseStream.Length / sizeof(int);
+                                for (var j = 0; j < countt; j++)
+                                {
+                                    writer.Write(nomer);
+                                    writer.Write(srok);
+                                    writer.Write(cvv);
+                                    writer.Write((Convert.ToDecimal(balance) - Convert.ToDecimal(Oplata.Content)).ToString());
+                                    break;
+                                }
+                                MessageBox.Show("Спасибо за покупку, ожидайте подтверждения операции!");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не хватает средств на балансе, пополните карточку!");
                         }
                     }
 
                 }
-                else
+
+                catch
                 {
-                    MessageBox.Show("Купи деньги");
+                    MessageBox.Show("Выберите представление или способ оплаты, возможно необходимо пополнить карточку!");
                 }
             }
+            else
+            {
 
-            
+            }
         }
 
         private void Pochitat_Click(object sender, RoutedEventArgs e)
         {
-            string connStr = "Server=DESKTOP-FI66D9D;Database=Teatr;Trusted_Connection=True;";
-            // создаём объект для подключения к БД
-            SqlConnection conn = new SqlConnection(connStr);
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос
-            // string itog1 = 'SELECT Price FROM Performance WHERE Name_Performance = Predstavlenie.SelectedItem.ToString()';
-            var example = new PerformanceTableAdapter().ScalarQuery(Predstavlenie.Text);
+            try
+            {
+                string connStr = "Server=DESKTOP-FI66D9D;Database=Teatr;Trusted_Connection=True;";
+                // создаём объект для подключения к БД
+                SqlConnection conn = new SqlConnection(connStr);
+                // устанавливаем соединение с БД
+                conn.Open();
+                // запрос
+                // string itog1 = 'SELECT Price FROM Performance WHERE Name_Performance = Predstavlenie.SelectedItem.ToString()';
+                var example = new PerformanceTableAdapter().ScalarQuery(Predstavlenie.Text);
 
 
-            //int itog1 = 'SELECTgfg price FROM Performance WHERE price = "Predstavlenie.SelectedItem.ToString()"' ;
-            conn.Close();
+                //int itog1 = 'SELECTgfg price FROM Performance WHERE price = "Predstavlenie.SelectedItem.ToString()"' ;
+                conn.Close();
 
 
-            itog= Convert.ToDecimal(example) * Convert.ToDecimal(KolichestvoBiletov.Text);
-            Oplata.Content = itog;
+                itog = Convert.ToDecimal(example) * Convert.ToDecimal(KolichestvoBiletov.Text);
+                Oplata.Content = itog;
+            }
+            catch
+            {
+                MessageBox.Show("Выберите представление или количество билетов!");
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -192,7 +213,7 @@ namespace WpfApp1
         {
             PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
             e.Column.Header = propertyDescriptor.DisplayName;
-            if (propertyDescriptor.DisplayName == "Код билета")
+            if (propertyDescriptor.DisplayName == "Код билета" || propertyDescriptor.DisplayName == "Логин")
             {
                 e.Cancel = true;
             }

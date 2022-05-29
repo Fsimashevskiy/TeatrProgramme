@@ -32,27 +32,31 @@ namespace WpfApp1
         private void Pochitat_Click(object sender, RoutedEventArgs e)
         {
 
-            if (Nomer_Card_Text.Text.Length < 16)
+            if (Nomer_Card_Text.Text.Length < 16 || Srok_Text.Text.Length < 5 || CVV_Text.Text.Length < 3)
             {
 
-                MessageBox.Show("Введите полный номер вашей карточки!");
+                MessageBox.Show("Введите корректные данные вашей карты!");
                 Nomer_Card_Text.Clear();
                 Nomer_Card_Text.Focus();
+                Srok_Text.Clear();
+                Srok_Text.Focus();
+                CVV_Text.Clear();
+                CVV_Text.Focus();
             }
 
-            if (Srok_Text.Text.Length < 5)
-            {
-                MessageBox.Show("Введите корректный срок действия карточки!");
-                Nomer_Card_Text.Clear();
-                Nomer_Card_Text.Focus();
-            }
+            //if (Srok_Text.Text.Length < 5)
+            //{
+            //    MessageBox.Show("Введите корректный срок действия карточки!");
+            //    Srok_Text.Clear();
+            //    Srok_Text.Focus();
+            //}
 
-            if(CVV_Text.Text.Length < 3)
-            {
-                MessageBox.Show("Введите корректный CVV!");
-                Nomer_Card_Text.Clear();
-                Nomer_Card_Text.Focus();
-            }
+            //if(CVV_Text.Text.Length < 3)
+            //{
+            //    MessageBox.Show("Введите корректный CVV!");
+            //    CVV_Text.Clear();
+            //    CVV_Text.Focus();
+            //}
 
             else
             {
@@ -72,6 +76,7 @@ namespace WpfApp1
                             binwr1.Write(srok);
                             binwr1.Write(cvv);
                             binwr1.Write("0");
+                            MessageBox.Show("Ваша карта оформлена!");
                         }
                     }
                     else
@@ -135,58 +140,65 @@ namespace WpfApp1
                     i++;
                 }
             }
+
         }
 
 
         private void Popolnit_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}\{CardBox.SelectedItem.ToString()}";
-
-            string nomer="";
-            string srok="";
-            string cvv="";
-            string balance="";
-
-            using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
+            try
             {
-                var count = reader.BaseStream.Length / sizeof(int);
-                for (var i = 0; i < count; i++)
+
+
+
+                string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}\{CardBox.SelectedItem.ToString()}";
+                string nomer = "";
+                string srok = "";
+                string cvv = "";
+                string balance = "";
+
+                using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
                 {
-                    nomer = reader.ReadString();
-                    srok = reader.ReadString();
-                    cvv = reader.ReadString();
-                    balance = reader.ReadString();
-                    decimal itog = Convert.ToDecimal(balance)+Convert.ToDecimal(PopolnitText.Text);
-
-
-
-                    reader.Close();
-
-                    using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Open)))
+                    var count = reader.BaseStream.Length / sizeof(int);
+                    for (var i = 0; i < count; i++)
                     {
-                        var countt = writer.BaseStream.Length / sizeof(int);
-                        for (var j = 0; j < countt; j++)
+                        nomer = reader.ReadString();
+                        srok = reader.ReadString();
+                        cvv = reader.ReadString();
+                        balance = reader.ReadString();
+                        decimal itog = Convert.ToDecimal(balance) + Convert.ToDecimal(PopolnitText.Text);
+
+
+
+                        reader.Close();
+
+                        using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Open)))
                         {
-                            writer.Write(nomer);
-                            writer.Write(srok);
-                            writer.Write(cvv);
-                            writer.Write(itog.ToString());
-                            break;
+                            var countt = writer.BaseStream.Length / sizeof(int);
+                            for (var j = 0; j < countt; j++)
+                            {
+                                writer.Write(nomer);
+                                writer.Write(srok);
+                                writer.Write(cvv);
+                                writer.Write(itog.ToString());
+                                break;
+                            }
                         }
+                        Balans.Content = itog.ToString() + "₽";
+                        break;
+
                     }
-                    Balans.Content = itog.ToString();
-                    break;
-                    
-                }                   
+                }
+
+
             }
 
+            catch
+            {
+                MessageBox.Show("Выберите карту!");
+            }
 
-
-
-
-
+            
 
 
         }
@@ -244,6 +256,30 @@ namespace WpfApp1
 
 
             }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}\{CardBox.SelectedItem.ToString()}";
+                FileInfo fileinf = new FileInfo(path);
+                if (fileinf.Exists)
+                {
+                    fileinf.Delete();
+                    UpdateBox();
+                }
+            }
+
+            catch 
+            {
+                MessageBox.Show("Выберите карту!");
+            }
+
+           
+           
+            
         }
 
 

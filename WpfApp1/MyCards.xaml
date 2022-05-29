@@ -24,7 +24,7 @@
 
             <StackPanel/>
 
-            <StackPanel Margin="2,27,0,3">
+            <StackPanel Margin="2,3,0,3">
                 <Button Content="Вернуться"  Background="White" RenderTransformOrigin="-0.429,0.585" FontWeight="Bold" Click="Button_Click"  Height="45" Width="83" >
                     <Button.RenderTransform>
                         <TransformGroup>
@@ -71,7 +71,7 @@
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform X="0" Y="12"/>
+                            <TranslateTransform X="0" Y="-12"/>
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
@@ -86,7 +86,7 @@
                             <TranslateTransform X="280" Y="100"/>
                         </TransformGroup>
                     </ComboBox.RenderTransform>
-                   
+
 
 
                 </ComboBox>
@@ -96,11 +96,11 @@
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform Y="-50" X="40"/>
+                            <TranslateTransform Y="-75" X="40"/>
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <Button x:Name="Delete"  Content="Удалить"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40" FontSize="20" Width="218" FontWeight="Bold" >
+                <Button x:Name="Delete"  Content="Удалить"  RenderTransformOrigin="-0.659,0.361"  Background="White"  Height="40" FontSize="20" Width="218" FontWeight="Bold" Click="Delete_Click" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -156,7 +156,7 @@
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform X="0" Y="-360"/>
+                            <TranslateTransform X="0" Y="-380"/>
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
@@ -166,7 +166,7 @@
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform X="0" Y="-230"/>
+                            <TranslateTransform X="0" Y="-280"/>
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
@@ -176,7 +176,7 @@
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform Y="-230" X="40"/>
+                            <TranslateTransform Y="-280" X="40"/>
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
@@ -200,6 +200,10 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
+                <Button Content="Button"/>
+                
+
+
             </StackPanel>
 
             <Label Content="Выбор банка" HorizontalAlignment="Left" Margin="328,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.466,-1.964">
@@ -208,7 +212,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="-20" X="30"/>
+                        <TranslateTransform Y="-50" X="20"/>
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
@@ -218,12 +222,13 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="0" X="-25"/>
+                        <TranslateTransform Y="-50" X="-25"/>
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
 
 
         </Grid>
+        
     </Grid>
 </Window>
