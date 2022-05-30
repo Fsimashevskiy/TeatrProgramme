@@ -180,7 +180,7 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <TextBox x:Name="PopolnitText"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" >
+                <TextBox x:Name="PopolnitText"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" MaxLength="5">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

@@ -110,7 +110,7 @@ namespace WpfApp1
                     {
                         var a = new UserTableAdapter().FillBy(TicketBox.Text);
 
-
+                        
 
 
 
@@ -134,9 +134,10 @@ namespace WpfApp1
                                 break;
                             }
                         }
+                       
                         if (Convert.ToDecimal(balance) > Convert.ToDecimal(Oplata.Content))
                         {
-
+                            
                             new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
                             UpdateTicketUser();
 

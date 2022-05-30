@@ -25,9 +25,11 @@ namespace WpfApp1
             InitializeComponent();
             loginMyCardsBox.Text += log;
             UpdateBox();
+
+            
         }
 
-
+       
     
         private void Pochitat_Click(object sender, RoutedEventArgs e)
         {
@@ -126,7 +128,7 @@ namespace WpfApp1
             int i = 0;
             if (Directory.Exists(path) == false )
             {
-                MessageBox.Show("Здесь вы можете добавлять карты и пополнять их");
+                
             }
             else {
                 while (i < Directory.GetFiles(path).Count())
@@ -149,48 +151,52 @@ namespace WpfApp1
             try
             {
 
-
-
-                string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}\{CardBox.SelectedItem.ToString()}";
-                string nomer = "";
-                string srok = "";
-                string cvv = "";
-                string balance = "";
-
-                using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
+                if (PopolnitText.Text.Contains("-") == false)
                 {
-                    var count = reader.BaseStream.Length / sizeof(int);
-                    for (var i = 0; i < count; i++)
+                    
+
+
+
+                    string path = $@"C:\Users\Fsima\Desktop\WpfApp1-master\WpfApp1-master\Cards\{loginMyCardsBox.Text}\{CardBox.SelectedItem.ToString()}";
+                    string nomer = "";
+                    string srok = "";
+                    string cvv = "";
+                    string balance = "";
+
+                    using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
                     {
-                        nomer = reader.ReadString();
-                        srok = reader.ReadString();
-                        cvv = reader.ReadString();
-                        balance = reader.ReadString();
-                        decimal itog = Convert.ToDecimal(balance) + Convert.ToDecimal(PopolnitText.Text);
-
-
-
-                        reader.Close();
-
-                        using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Open)))
+                        var count = reader.BaseStream.Length / sizeof(int);
+                        for (var i = 0; i < count; i++)
                         {
-                            var countt = writer.BaseStream.Length / sizeof(int);
-                            for (var j = 0; j < countt; j++)
+                            nomer = reader.ReadString();
+                            srok = reader.ReadString();
+                            cvv = reader.ReadString();
+                            balance = reader.ReadString();
+                            decimal itog = Convert.ToDecimal(balance) + Convert.ToDecimal(PopolnitText.Text);
+
+
+
+                            reader.Close();
+
+                            using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Open)))
                             {
-                                writer.Write(nomer);
-                                writer.Write(srok);
-                                writer.Write(cvv);
-                                writer.Write(itog.ToString());
-                                break;
+                                var countt = writer.BaseStream.Length / sizeof(int);
+                                for (var j = 0; j < countt; j++)
+                                {
+                                    writer.Write(nomer);
+                                    writer.Write(srok);
+                                    writer.Write(cvv);
+                                    writer.Write(itog.ToString());
+                                    break;
+                                }
                             }
+                            Balans.Content = itog.ToString() + "₽";
+                            break;
+
                         }
-                        Balans.Content = itog.ToString() + "₽";
-                        break;
-
                     }
+
                 }
-
-
             }
 
             catch
@@ -198,8 +204,7 @@ namespace WpfApp1
                 MessageBox.Show("Выберите карту!");
             }
 
-            
-
+           
 
         }
 
@@ -268,7 +273,8 @@ namespace WpfApp1
                 if (fileinf.Exists)
                 {
                     fileinf.Delete();
-                    UpdateBox();
+                    CardBox.Items.Remove(fileinf.Name);
+                    
                 }
             }
 
