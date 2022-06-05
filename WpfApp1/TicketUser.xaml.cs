@@ -83,7 +83,7 @@ namespace WpfApp1
             View_UserCheckTableAdapter adapter = new View_UserCheckTableAdapter();
             DataSet1.View_UserCheckDataTable table = new DataSet1.View_UserCheckDataTable();
             adapter.Fill(table);
-            TicketUserDataGrid.ItemsSource = table;
+            //TicketUserDataGrid.ItemsSource = table;
            
         }
 

@@ -11,38 +11,9 @@
         <Grid>
 
             <StackPanel>
-                <materialDesign:Badged Content="Постановки"  Background="#FF4500" Foreground="White" RenderTransformOrigin="12.626,-17.64" Width="376" Height="25" FontStretch="Normal">
-                    <materialDesign:Badged.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="55" Y="30"/>
-                        </TransformGroup>
-                    </materialDesign:Badged.RenderTransform>
-                </materialDesign:Badged>
+                
 
-                <DataGrid x:Name="TicketUserDataGrid" RenderTransformOrigin="1.558,0.478" Height="361" Width="376" Background="White" AutoGeneratingColumn="TicketUserDataGrid_AutoGeneratingColumn">
-                    <DataGrid.RowHeaderStyle>
-                        <Style TargetType="DataGridRowHeader">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate />
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </DataGrid.RowHeaderStyle>
-
-
-                    <DataGrid.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-150" Y="30"/>
-                        </TransformGroup>
-                    </DataGrid.RenderTransform>
-                </DataGrid>
+               
 
             </StackPanel>
 
@@ -128,6 +99,7 @@
                     </ComboBox.RenderTransform>
                 </ComboBox>
             </StackPanel>
+            <Image Source="C:\Users\Fsima\Desktop\Sourse\Teatr3.jpg" Margin="-111,19,191,11"/>
 
             <Label x:Name="Oplata" HorizontalAlignment="Left" Margin="510,351,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="214" Height="32">
                 <Label.RenderTransform>

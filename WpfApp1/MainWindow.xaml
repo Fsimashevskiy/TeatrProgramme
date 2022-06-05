@@ -35,7 +35,7 @@
 
         <TextBox DataObject.Pasting="password_Pasting"  x:Name="password" Margin="37,27,18,0" Padding="4"  BorderBrush="#1C1E21" PreviewTextInput="password_PreviewTextInput" Grid.ColumnSpan="2" Grid.Row="3" />
         <Button Grid.Row="5" Height="20" Content="Нет аккауна?" Background="White" Padding="0" Foreground="Black"  FontSize="10"  Grid.ColumnSpan="2" Margin="110,10,96,0" Grid.RowSpan="2" Click="regin_Click"/>
-        <Button Grid.Row="7" Height="30px" Content="Войти" Click="enter_Click" Grid.ColumnSpan="2" Margin="110,17,96,3" Background="#FF4500" Foreground="White" FontWeight="Bold" FontSize="16" />
+        <Button Grid.Row="7" Height="30px" Content="Войти" Click="enter_Click" Grid.ColumnSpan="2" Margin="110,17,96,3" Background="#FF45" Foreground="White" FontWeight="Bold" FontSize="16" />
 
 
 

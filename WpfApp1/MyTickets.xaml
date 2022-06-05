@@ -54,6 +54,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
+            <Image Source="C:\Users\Fsima\Desktop\Sourse\Teatr2.jpg" Height="332"/>
         </StackPanel>
 
     </Grid>

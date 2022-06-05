@@ -226,7 +226,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-
+            <Image Source="C:\Users\Fsima\Desktop\Sourse\Teatr5.png" Margin="-181,66,345,139"/>
 
         </Grid>
         

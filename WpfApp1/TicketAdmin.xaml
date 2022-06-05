@@ -46,9 +46,16 @@
                         </TransformGroup>
                     </DataGrid.RenderTransform>
                 </DataGrid>
-                
-                
-                
+                <Image Source="C:\Users\Fsima\Desktop\Sourse\Teatr6.jpg" Height="559" Width="306" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-340" X="240"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
 
             </StackPanel>
 
@@ -83,6 +90,7 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                 </Button>
+
             </StackPanel>
         </Grid>
 

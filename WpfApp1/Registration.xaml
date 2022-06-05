@@ -10,18 +10,18 @@
         Title="Registration" Height="450" Width="520">
     <Grid>
 
-        <StackPanel  Margin="50">
-            <TextBox x:Name="Fam"  Height="40"  Width="285" FontSize="20">
+        <StackPanel  Margin="50,50,34,4">
+            <TextBox x:Name="Fam"  Height="40"  Width="285" FontSize="20" TextChanged="Fam_TextChanged">
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
             </TextBox>
-            <TextBox x:Name="Imya" Margin="7"  Height="40" Width="285" FontSize="20">
+            <TextBox x:Name="Imya" Margin="7"  Height="40" Width="285" FontSize="20" TextChanged="Imya_TextChanged">
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
             </TextBox>
-            <TextBox x:Name="Otch"   Height="40" Width="285" FontSize="20">
+            <TextBox x:Name="Otch"   Height="40" Width="285" FontSize="20" TextChanged="Otch_TextChanged">
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
@@ -55,7 +55,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="30" X="-5"/>
+                        <TranslateTransform Y="40" X="-5"/>
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
