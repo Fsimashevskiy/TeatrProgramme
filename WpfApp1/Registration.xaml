@@ -7,7 +7,7 @@
         xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Accessibility="clr-namespace:Accessibility;assembly=Accessibility" x:Class="WpfApp1.Registration"
         mc:Ignorable="d"
-        Title="Registration" Height="450" Width="520">
+        Title="Registration" Height="450" Width="520" ResizeMode="NoResize">
     <Grid>
 
         <StackPanel  Margin="50,50,34,4">
@@ -26,17 +26,17 @@
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
             </TextBox>
-            <TextBox x:Name="Log" Margin="7"  Height="40" Width="285" FontSize="20">
+            <TextBox x:Name="Log" Margin="7"  Height="40" Width="285" FontSize="20" TextChanged="Log_TextChanged">
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
             </TextBox>
-            <TextBox x:Name="Pass"  Height="40" Width="285" FontSize="20">
+            <TextBox x:Name="Pass"  Height="40" Width="285" FontSize="20" TextChanged="Pass_TextChanged">
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>
             </TextBox>
-            <TextBox x:Name="PassPov" Height="40" Width="285" RenderTransformOrigin="0.5,0.5" FontSize="20" >
+            <TextBox x:Name="PassPov" Height="40" Width="285" RenderTransformOrigin="0.5,0.5" FontSize="20" TextChanged="PassPov_TextChanged" >
                 <TextBox.DataContext>
                     <Accessibility:__MIDL_IWinTypes_0009/>
                 </TextBox.DataContext>

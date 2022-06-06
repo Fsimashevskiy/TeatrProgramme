@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MyCards" Height="500" Width="800">
+        Title="MyCards" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="loginMyCardsBox"  TextWrapping="Wrap" Background="White" FontSize="20" RenderTransformOrigin="0.5,0.5" Margin="40,296,517,59" >
             <TextBox.RenderTransform>
@@ -180,7 +180,7 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <TextBox x:Name="PopolnitText"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" MaxLength="5">
+                <TextBox x:Name="PopolnitText"  TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" MaxLength="5" TextChanged="PopolnitText_TextChanged">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

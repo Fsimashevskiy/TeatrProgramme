@@ -91,5 +91,35 @@ namespace WpfApp1
                     textBox.Text.Where(ch => ch >= 'а' && ch <= 'я' || ch >= 'А' && ch <= 'Я').ToArray());
             }
         }
+
+        private void Pass_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+            }
+        }
+
+        private void PassPov_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+            }
+        }
+
+        private void Log_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+            }
+        }
     }
 }

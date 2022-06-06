@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WpfApp1.Doljnost"
         mc:Ignorable="d"
-        Title="Doljnost" Height="500" Width="800">
+        Title="Doljnost" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
 
 

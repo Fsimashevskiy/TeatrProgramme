@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WpfApp1.Genre"
         mc:Ignorable="d"
-        Title="Жанр" Height="500" Width="800">
+        Title="Жанр" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
 
         <DataGrid x:Name="GenreDataGreed" Margin="61,55,349,40" AutoGeneratingColumn="GenreDataGreed_AutoGeneratingColumn">

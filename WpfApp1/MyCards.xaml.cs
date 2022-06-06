@@ -288,6 +288,20 @@ namespace WpfApp1
             
         }
 
+        private void PopolnitText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9').ToArray());
+
+
+
+
+            }
+        }
+
 
 
 

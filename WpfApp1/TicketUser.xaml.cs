@@ -137,22 +137,28 @@ namespace WpfApp1
                        
                         if (Convert.ToDecimal(balance) > Convert.ToDecimal(Oplata.Content))
                         {
-                            
-                            new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
-                            UpdateTicketUser();
-
-                            using (BinaryWriter writer = new BinaryWriter(File.Open(pu, FileMode.Open)))
+                            if (Oplata.Content.ToString() != "0")
                             {
-                                var countt = writer.BaseStream.Length / sizeof(int);
-                                for (var j = 0; j < countt; j++)
+                                new CheckTableAdapter().InsertQuery(Convert.ToInt32(KolichestvoBiletov.Text), "Театр имени Simashevskiy", Convert.ToInt32("0"), Convert.ToInt32(a), 1, Convert.ToInt32(Predstavlenie.SelectedValue), Convert.ToDecimal(itog));
+                                UpdateTicketUser();
+
+                                using (BinaryWriter writer = new BinaryWriter(File.Open(pu, FileMode.Open)))
                                 {
-                                    writer.Write(nomer);
-                                    writer.Write(srok);
-                                    writer.Write(cvv);
-                                    writer.Write((Convert.ToDecimal(balance) - Convert.ToDecimal(Oplata.Content)).ToString());
-                                    break;
+                                    var countt = writer.BaseStream.Length / sizeof(int);
+                                    for (var j = 0; j < countt; j++)
+                                    {
+                                        writer.Write(nomer);
+                                        writer.Write(srok);
+                                        writer.Write(cvv);
+                                        writer.Write((Convert.ToDecimal(balance) - Convert.ToDecimal(Oplata.Content)).ToString());
+                                        break;
+                                    }
+                                    MessageBox.Show("Спасибо за покупку, ожидайте подтверждения операции!");
                                 }
-                                MessageBox.Show("Спасибо за покупку, ожидайте подтверждения операции!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Выберите количество билетов не равное 0");
                             }
 
                         }
@@ -217,6 +223,16 @@ namespace WpfApp1
             if (propertyDescriptor.DisplayName == "Код билета" || propertyDescriptor.DisplayName == "Логин")
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void KolichestvoBiletov_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.Text = new string
+                    (
+                    textBox.Text.Where(ch => ch >= '0' && ch <= '9').ToArray());
             }
         }
     }
