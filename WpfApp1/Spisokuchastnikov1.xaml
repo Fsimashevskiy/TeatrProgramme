@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Spisokuchastnikov1" Height="500" Width="800">
+        Title="Spisokuchastnikov1" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-       
+
         <DataGrid AutoGeneratingColumn="SpisokSotrudnikDataGrid_AutoGeneratingColumn" x:Name="SpisokSotrudnikDataGrid" Margin="61,55,349,34">
 
 
@@ -26,7 +26,16 @@
         </DataGrid>
 
 
-        <Label Content="Роль" HorizontalAlignment="Left" Margin="595,282,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="595,282,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-5"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <materialDesign:Badged Content="Cписок участников"  Background="#FF4500" Foreground="White" RenderTransformOrigin="12.626,-17.64" Width="377" Height="25" FontStretch="Normal">
             <materialDesign:Badged.RenderTransform>
                 <TransformGroup>
@@ -74,7 +83,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="205" X="0"/>
+                        <TranslateTransform Y="230" X="0"/>
                     </TransformGroup>
                 </ComboBox.RenderTransform>
             </ComboBox>
@@ -89,7 +98,7 @@
                 </Button.RenderTransform>
             </Button>
 
-           
+
             <TextBox x:Name="Character" Text="" TextWrapping="Wrap" Background="White"  Height="39"  Width="221" FontSize="20" RenderTransformOrigin="0.5,0.5" TextChanged="Character_TextChanged" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
@@ -110,6 +119,28 @@
                     </TransformGroup>
                 </ComboBox.RenderTransform>
             </ComboBox>
+            <Label Content="Выбор участника" Width="130" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="120" X="15"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+
+
         </StackPanel>
+        <Label Content="Постановка" HorizontalAlignment="Left" Margin="592,355,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-15"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

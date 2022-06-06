@@ -127,7 +127,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="20" X="50"/>
+                        <TranslateTransform Y="20" X="35"/>
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
