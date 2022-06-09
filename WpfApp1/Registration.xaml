@@ -7,7 +7,7 @@
         xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Accessibility="clr-namespace:Accessibility;assembly=Accessibility" x:Class="WpfApp1.Registration"
         mc:Ignorable="d"
-        Title="Registration" Height="450" Width="520" ResizeMode="NoResize">
+        Title="Регистрация" Height="450" Width="520" ResizeMode="NoResize">
     <Grid>
 
         <StackPanel  Margin="50,50,34,4">
