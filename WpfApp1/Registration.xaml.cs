@@ -33,7 +33,7 @@ namespace WpfApp1
             {
                 if (Pass.Text == PassPov.Text)
                 {
-                    if (Pass.Text != "" && PassPov.Text != "" && Log.Text != "" && Imya.Text != "" && Fam.Text != "" && Otch.Text != "")
+                    if (Pass.Text != "" && PassPov.Text != "" && Log.Text != "" && Imya.Text != "" && Fam.Text != "" )
                     {
                         new UserTableAdapter().InsertQuery(Fam.Text, Imya.Text, Otch.Text, Log.Text, Pass.Text);
                         MessageBox.Show("Регистрация прошла успешно!");
@@ -98,7 +98,7 @@ namespace WpfApp1
             {
                 textBox.Text = new string
                     (
-                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9').ToArray());
             }
         }
 
@@ -108,7 +108,7 @@ namespace WpfApp1
             {
                 textBox.Text = new string
                     (
-                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9').ToArray());
             }
         }
 
@@ -118,7 +118,7 @@ namespace WpfApp1
             {
                 textBox.Text = new string
                     (
-                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z').ToArray());
+                    textBox.Text.Where(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9').ToArray());
             }
         }
     }
